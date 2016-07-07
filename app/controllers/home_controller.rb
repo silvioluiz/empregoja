@@ -3,4 +3,6 @@ class HomeController < ApplicationController
     @jobs = Job.all
   end
 
+  
+
 end
