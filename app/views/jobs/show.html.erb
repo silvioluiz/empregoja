@@ -1,6 +1,6 @@
 <h1><%= @job.title %><h1>
   <%= @job.category %>
-  <%= @job.company %>
+  <%= @job.company.name %>
   <%= @job.description %>
   <%= @job.location %>
   <% if @job.featured? %>
