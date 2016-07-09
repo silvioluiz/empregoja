@@ -10,13 +10,13 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new(job_parameters)
-    if @job.invalid?
-      flash[:notice] = "Não foi possível criar a vaga"
-      @companies = Company.all
-      render :new
-    elsif
+    if @job.save
       @job = Job.create(job_parameters)
       redirect_to @job
+    elsif
+      flash[:notice] = "Não foi possível criar a vaga"
+      @companies = Company.all
+      render :new      
     end
   end
 
