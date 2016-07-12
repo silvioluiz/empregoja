@@ -1,9 +1,15 @@
 <% @jobs.each do |job| %>
   <h1> <%= job.title %> </h1>
-  <%= job.company.name %>
+  <h1> <%= job.company.name %> </h1>
   <%= job.location %>
+  <%= job.category %>
   <% if job.featured? %>
     <strong> Destaque </strong>
   <% end %>
   <%= link_to "#{job.title}" , job %>
 <% end %>
+
+<h1> Empresas </h1>
+<% @companies.each do |company| %>
+  <%= link_to "#{company.name}", company %>
+<%end %>
