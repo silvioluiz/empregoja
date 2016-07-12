@@ -7,8 +7,8 @@
   <%= f.label :location, "Local" %>
   <%= f.text_field :location %>
   <div>
-    <%= f.label :category, "Categoria" %>
-    <%= f.text_field :category %>
+    <%= f.label :category_id, "Categoria" %>
+    <%= f.collection_select(:category_id, @categories, :id, :name) %>
   </div>
   <div>
     <%= f.label :company_id, "Empresa" %>
