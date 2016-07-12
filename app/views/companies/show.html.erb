@@ -1,11 +1,8 @@
 <section>
-<h1><%= @company.name %> </h1>
-<%= @company.location %>
-<%= @company.mail %>
-<%= @company.phone %>
-
-<%= @company.jobs.each do |job| %>
-  <%= job.title %>
-  <%= job.category %>
-<%end%>
+  <h1><%= @company.name %> </h1>
+  <%= @company.location %>
+  <%= @company.mail %>
+  <%= @company.phone %>
 </section>
+
+<%= render @jobs %>

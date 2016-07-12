@@ -1,0 +1,10 @@
+<section>
+    <h1> <%= job.title %> </h1>
+    <h1> <%= job.company.name %> </h1>
+    <%= job.location %>
+    <%= job.category %>
+    <% if job.featured? %>
+      <strong> Destaque </strong>
+    <% end %>
+    <%= link_to "#{job.title}" , job %>
+</section>
