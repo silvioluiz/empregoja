@@ -1,8 +1,21 @@
-<%= render @jobs %>
+<div class="row">
+  <div class="col-md-9">
+    <div class="row">
+        <% @jobs.each do |job| %>
+          <div class="col-md-6">
+            <%= render job %>
+          </div>
+        <% end %>
+    </div>
+  </div>
 
-<aside>
-  <h1> Empresas </h1>
-  <% @companies.each do |company| %>
-    <%= link_to "#{company.name}", company %>
-  <%end %>
-</aside>
+  <div class="col-md-3">
+  <aside>
+    <h1> Empresas </h1>
+    <% @companies.each do |company| %>
+      <%= link_to "#{company.name}", company %>
+    <%end %>
+  </aside>
+  </div>
+
+</div>
