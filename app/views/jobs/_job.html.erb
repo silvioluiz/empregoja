@@ -1,10 +1,16 @@
 <section>
-    <h1> <%= job.title %> </h1>
-    <h1> <%= job.company.name %> </h1>
-    <%= job.location %>
-    <%= job.category.name %>
-    <% if job.featured? %>
-      <strong> Destaque </strong>
-    <% end %>
-    <%= link_to "#{job.title}" , job %>
+<div class="panel panel-default">
+    <div class="panel panel-heading">
+      <h1> <%= link_to job.title, job %> </h1>
+
+    </div>
+    <div class="panel panel-body">
+      <div> <%= job.company.name %> </div>
+      <div><%= job.location %></div>
+      <div><%= job.category.name %></div>
+      <% if job.featured? %>
+        <div><strong> Destaque </strong></div>
+      <% end %>      
+    </div>
+</div>
 </section>
