@@ -17,7 +17,24 @@ class CompaniesController < ApplicationController
       @company.save
       redirect_to @company
     else
+      flash.now[:error] = "Não foi possível criar a Empresa"
+      render 'new'
+    end
 
+  end
+
+  def edit
+    @company = Company.find(params[:id])
+  end
+
+  def update
+    @company = Company.find(params[:id])
+
+    if @company.update(company_parameters)
+      redirect_to @company
+    else
+      flash.now[:error] = "Não foi possível atualizar a Empresa"
+      render 'edit'
     end
 
   end

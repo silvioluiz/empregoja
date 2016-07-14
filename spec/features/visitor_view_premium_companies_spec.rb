@@ -21,6 +21,7 @@ feature 'Visitor view premium companies' do
     click_on company.name
 
     expect(page).to have_css('h1', text: company.name)
+    #expect(page).to have_css("//span[contain](@class,'glyphicon-star')]")
     expect(page).to have_xpath("//img[contains(@src,'estrela')]")
   end
 
@@ -35,8 +36,8 @@ feature 'Visitor view premium companies' do
     click_on company.name
 
     expect(page).to have_css('h1', text: company.name)
-    expect(page).to have_css('span', class: 'glyphicon-star')
-    #expect(page).not_to have_xpath("//img[contains(@src,'estrela')]")
+    #expect(page).to have_css('span', class: 'glyphicon-star')
+    expect(page).not_to have_xpath("//img[contains(@src,'estrela')]")
   end
 
 end
