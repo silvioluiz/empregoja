@@ -1,0 +1,12 @@
+<h1><%= @category.name %></h1>
+<% unless @category.jobs.empty? %>
+  <div class="panel panel-default">
+      <div class="panel panel-body">
+        <ul class="list-unstyled">
+          <% @category.jobs.each do |job| %>
+            <li><%= job.title %>| <%= job.location %></li>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+<% end %>

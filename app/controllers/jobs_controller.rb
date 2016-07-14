@@ -13,7 +13,7 @@ class JobsController < ApplicationController
     if @job.update(job_parameters)
       redirect_to @job
     else
-      flash[:notice] = "Não foi possível atualizar a vaga"
+      flash.now[:error] = "Não foi possível atualizar a vaga"
       set_collections
       render :edit
     end
@@ -29,7 +29,7 @@ class JobsController < ApplicationController
       @job = Job.create(job_parameters)
       redirect_to @job
     elsif
-      flash[:notice] = "Não foi possível criar a vaga"
+      flash.now[:error] = "Não foi possível criar a vaga"
       set_collections
       render :new
     end
