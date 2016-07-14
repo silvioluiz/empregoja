@@ -1,5 +1,8 @@
 <section>
   <h1><%= @company.name %> </h1>
+  <% if @company.premium? %>
+    <span class="glyphicon glyphicon-star text-warning" aria-hidden="true"/>    
+  <% end %>
   <%= @company.location %>
   <%= @company.mail %>
   <%= @company.phone %>
